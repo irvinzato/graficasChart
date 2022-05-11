@@ -19,14 +19,11 @@ export class BarrasComponent implements OnInit {
     plugins: {
       legend: {
         display: true,
-      },
-      /* datalabels: {
-        anchor: 'end',
-        align: 'end'
-      } */
+      }
     }
   };
   public barChartType: ChartType = 'bar';
+
 
   public barChartData: ChartData<'bar'> = {
     labels: [ '2006', '2007', '2008', '2009', '2010', '2011', '2012' ],
@@ -40,14 +37,6 @@ export class BarrasComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  /* public chartClicked({ event, active }: { event?: ChartEvent, active?: {}[] }): void {
-    console.log(event, active);
-  }
-
-  public chartHovered({ event, active }: { event?: ChartEvent, active?: {}[] }): void {
-    console.log(event, active);
-  } */
 
   public randomize(): void {
     this.barChartData.datasets[0].data[0] = Math.round(Math.random() * 100);
