@@ -28,23 +28,36 @@ export class BarrasComponent implements OnInit {
   public barChartData: ChartData<'bar'> = {
     labels: [ '2006', '2007', '2008', '2009', '2010', '2011', '2012' ],
     datasets: [
-      { data: [ 65, 59, 80, 81, 56, 55, 40 ], label: 'Series A' },
-      { data: [ 28, 48, 40, 19, 86, 27, 90 ], label: 'Series B' }
+      { data: [], 
+        label: 'Series A',
+         backgroundColor: '#ED5F76', 
+         hoverBackgroundColor: '#000000' 
+        },
+      { data: [ 28, 48, 40, 19, 86, 27, 90 ], 
+        label: 'Series B' 
+      }
     ]
   };
 
   constructor() { }
 
   ngOnInit(): void {
+    this.llenadoDeGrafica();
+  }
+
+  llenadoDeGrafica(){
+    this.barChartData.datasets[0].data.push(Math.round(Math.random() * 100));
+    this.barChartData.datasets[0].data.push(Math.round(Math.random() * 50));
+    this.barChartData.datasets[0].data.push(Math.round(Math.random() * 80));
+    this.barChartData.datasets[0].data.push(Math.round(Math.random() * 90));
+    this.barChartData.datasets[0].data.push(Math.round(Math.random() * 90));
+    this.barChartData.datasets[0].data.push(Math.round(Math.random() * 90));
+    this.barChartData.datasets[0].data.push(100);
   }
 
   public randomize(): void {
-    this.barChartData.datasets[0].data[0] = Math.round(Math.random() * 100);
-    this.barChartData.datasets[0].data[1] = Math.round(Math.random() * 50);
-    this.barChartData.datasets[0].data[2] = Math.round(Math.random() * 80);
-    this.barChartData.datasets[0].data[3] = Math.round(Math.random() * 90);
-    this.barChartData.datasets[0].data[4] = 100;
-    console.log(this.barChartData.datasets[0].data);
+
+    location.reload();    //PARA RECARGAR LA PAGINA Y LEA EL DATA. EN MI TS NO RECONOCE "this.chart?.update();"
    
     /* this.barChartData.datasets[0].data = [
       Math.round(Math.random() * 100),

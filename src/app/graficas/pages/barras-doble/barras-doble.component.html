@@ -1,1 +1,16 @@
-<p>barras-doble works!</p>
+<h2>Gráficas dobles</h2>
+<hr>
+
+<div class="row">
+    <div class="col-md-6">
+        Grafica 1
+        <!-- Mandamos datos mediante @Input para que reciba el componente "app-graficas-barra" -->
+        <app-grafica-barra [line]="true"
+                           [barChartData]="productoData"></app-grafica-barra>
+    </div>
+    <div class="col-md-6">
+        Grafica 2
+        <!-- Todo el codigo que sentimos se repite, se puede reciclar en un componente("components") -->
+        <app-grafica-barra [barChartData]="proovedoresData"></app-grafica-barra>
+    </div>
+</div>

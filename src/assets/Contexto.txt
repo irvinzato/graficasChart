@@ -1,0 +1,5 @@
+Aprendiendo a utilizar graficas ng2 charts(Revisar pagina oficial, puueden cambiar segun la version). Nuevamente simulamos el back con ayuda de "https://www.npmjs.com/package/json-server"
+y nuestro archivo creado en formato JSON, abriendo terminal desde su ubicacion para simularlo y utilizando "json-server --watch db.json"
+puede llamarse como queramos pero utilice "db.json" como nombre del archivo donde se simula la base de datos
+
+NOTA: se debe instalar de manera global primero para poder utilizarce, en el primer enlace vienen los pasos
